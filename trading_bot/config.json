@@ -1,0 +1,29 @@
+{
+    "data_sources": {
+        "asia": {
+            "markets": ["tokyo", "shanghai", "hong_kong", "singapore"],
+            "indices": ["NQ=F", "^N225", "000001.SS", "^HSI"],
+            "timezone": "Asia/Tokyo"
+        },
+        "london": {
+            "markets": ["london"],
+            "indices": ["NQ=F", "^FTSE"],
+            "timezone": "Europe/London"
+        },
+        "nyse": {
+            "markets": ["nyse"],
+            "indices": ["NQ=F", "^GSPC"],
+            "timezone": "America/New_York"
+        }
+    },
+    "api": {
+        "provider": "yfinance",
+        "rate_limit": 5,
+        "timeout": 30
+    },
+    "analysis": {
+        "indicators": ["sma", "ema", "rsi", "macd", "bollinger"],
+        "timeframes": ["1d", "1h"],
+        "volume_threshold": 1000000
+    }
+}

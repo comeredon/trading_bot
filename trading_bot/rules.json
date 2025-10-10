@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "name": "Bullish Consensus Rule",
+        "description": "Enter LONG when both Asia and London markets are bullish with high confidence",
+        "conditions": {
+            "overall_sentiment": "bullish",
+            "confidence_min": 0.6
+        },
+        "action": {
+            "type": "LONG",
+            "position_size": "moderate",
+            "stop_loss": 2.0,
+            "take_profit": 5.0
+        }
+    },
+    {
+        "id": 2,
+        "name": "Bearish Consensus Rule",
+        "description": "Enter SHORT when both markets are bearish with high confidence",
+        "conditions": {
+            "overall_sentiment": "bearish",
+            "confidence_min": 0.6
+        },
+        "action": {
+            "type": "SHORT",
+            "position_size": "moderate",
+            "stop_loss": 2.0,
+            "take_profit": 5.0
+        }
+    },
+    {
+        "id": 3,
+        "name": "High Momentum Long",
+        "description": "Aggressive LONG when strong upward momentum detected",
+        "conditions": {
+            "overall_sentiment": "bullish",
+            "signal_strength_min": 60
+        },
+        "action": {
+            "type": "LONG",
+            "position_size": "aggressive",
+            "stop_loss": 1.5,
+            "take_profit": 7.0
+        }
+    },
+    {
+        "id": 4,
+        "name": "Defensive Position",
+        "description": "Reduce exposure when signals are mixed",
+        "conditions": {
+            "overall_sentiment": "mixed"
+        },
+        "action": {
+            "type": "HOLD",
+            "position_size": "conservative",
+            "stop_loss": 3.0,
+            "take_profit": 3.0
+        }
+    },
+    {
+        "id": 5,
+        "name": "Strong Correlation Play",
+        "description": "Follow trend when high correlation between markets",
+        "conditions": {
+            "correlation_strength": "strong",
+            "overall_sentiment": ["bullish", "bearish"]
+        },
+        "action": {
+            "type": "FOLLOW_TREND",
+            "position_size": "moderate",
+            "stop_loss": 2.5,
+            "take_profit": 6.0
+        }
+    }
+]
